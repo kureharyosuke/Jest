@@ -1,4 +1,9 @@
-const fn = require("./fn");
+// Jest
+
+// expect(fn.add(1,1)).toBe(2);
+// expect(fn.add(1,3)).not.toBe(2);
+
+const toBe = require("./toBe");
 // 임포트해오고,
 
 test("1 + 1 ", () => {
@@ -8,11 +13,11 @@ test("1 + 1 ", () => {
 // toBe = 기대하는 값
 
 test("2 + 3 = 5", () => {
-  expect(fn.add(2, 3)).toBe(5); // **괄호 주의
+  expect(toBe.add(2, 3)).toBe(5); // **괄호 주의
 });
 
 test("3 + 3 = 5", () => {
-  expect(fn.add(3, 3)).toBe(5); // **괄호 주의
+  expect(toBe.add(3, 3)).toBe(5); // **괄호 주의
 });
 
 // npm test or yarn test
@@ -45,7 +50,7 @@ Time:        1.054 s
  */
 
 test("3 + 3 = 5", () => {
-  expect(fn.add(3, 3)).not.toBe(5); // **괄호 주의
+  expect(toBe.add(3, 3)).not.toBe(5); // **괄호 주의
 });
 
 /**
