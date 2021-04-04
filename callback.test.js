@@ -1,10 +1,10 @@
-const async = require("./async");
+const callback = require("./callback");
 
 test("3ms => name", () => {
   function callback(name) {
     expect(name).toBe("Mike");
   }
-  async.getName(callback);
+  callback.getName(callback);
 });
 
 //  ✓ 3ms => name (1 ms) // 3ms | 1ms
@@ -14,14 +14,14 @@ test("3ms => name", (done) => {
     expect(name).toBe("Mike");
     done();
   }
-  async.getName(callback);
+  callback.getName(callback);
 });
 
 // test("3ms => name", () => {
 //   function callback(name) {
 //     expect(name).toBe("Tom");
 //   }
-//   async.getName(callback);
+//   callback.getName(callback);
 // }); //이것때문에 error
 
 test("3ms => name", (done) => {
@@ -29,7 +29,7 @@ test("3ms => name", (done) => {
     expect(name).toBe("Mike");
     done();
   }
-  async.getName(callback); // 3ms => name (3004 ms)
+  callback.getName(callback); // 3ms => name (3004 ms)
 });
 
 /**
@@ -53,7 +53,7 @@ test("apierror", (done) => {
       done();
     }
   }
-  async.getApi(callback); // 3ms => name (3004 ms)
+  callback.getApi(callback); // 3ms => name (3004 ms)
 });
 
 /**
