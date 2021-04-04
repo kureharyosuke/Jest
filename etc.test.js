@@ -39,6 +39,6 @@ test("0 is false", () => {
     Received: "hellojest"
  */
 
-test("hello jest", () => {
+test("비어있지 않은 문자열은 true입니다.", () => {
   expect(etc.add("hello", "jest")).toBeTruthy();
 });
