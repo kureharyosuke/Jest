@@ -21,6 +21,7 @@ const promi = require("./promise");
 
 test(" 3ms => Age 30", () => {
   return promi.getAge().then((age) => {
+    // 꼭 return!!
     expect(age).toBe(30);
   });
 });
